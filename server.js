@@ -5,6 +5,14 @@ const cors = require("cors");
 
 const app = express();
 
+app.use(cors({
+  origin: "*",   // allow all during development
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"]
+}));
+
+app.use(express.json());
+
 // Middleware
 app.use(cors());
 app.use(express.json());
