@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../db");
 
-// POST contact message
+
 router.post("/", async (req, res) => {
   const { name, email, message } = req.body;
 

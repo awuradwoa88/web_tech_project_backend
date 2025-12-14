@@ -1,9 +1,8 @@
-require("dotenv").config();
+require("dotenv").config({ path: "../.env" });
 
 const express = require("express");
 const cors = require("cors");
 
-// Create app FIRST
 const app = express();
 
 // Middleware
@@ -11,13 +10,15 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-const bookRoutes = require("./backend/routes/books");
-const authRoutes = require("./backend/routes/auth");
-const contactRoutes = require("./backend/routes/contact");
+const bookRoutes = require("./routes/books");
+const authRoutes = require("./routes/auth");
+const contactRoutes = require("./routes/contact");
+const userRoutes = require("./routes/users"); // ✅ REQUIRED
 
 app.use("/api/books", bookRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/users", userRoutes); // ✅ THIS FIXES THE 404
 
 // Test route
 app.get("/", (req, res) => {
