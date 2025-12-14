@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Python Programming",
+    "category": "programming"
+  },
+  {
+    "id": 2,
+    "title": "Computer Networks",
+    "category": "networking"
+  },
+  {
+    "id": 3,
+    "title": "Database Systems",
+    "category": "database"
+  }
+]
